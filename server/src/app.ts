@@ -18,7 +18,7 @@ app.get("/*", pages);
 
 const server = app.listen(port, () => console.log(`Example application listening on port ${port}`));
 
-// setup proxies
+// setup dev servers & proxies
 if (process.env.NODE_ENV === "development") {
   await startAllViteDevServers();
   setupProxyMiddlewares(server);
