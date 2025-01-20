@@ -41,3 +41,5 @@ An example of a Multi-Page Application (MPA) where:
   - `pages.get("/my-new-page", render("my-new-page"));`
 - add a new endpoint to serve the page assets in `pages.ts`
   - `pages.get("/my-new-page/*", render("my-new-page"));`
+- back in the root directory of this project, add the new page to the npm workspaces
+  - `"web/pages/my-new-page"`
