@@ -1,0 +1,25 @@
+{
+  "name": "microfrontends-example",
+  "version": "1.0.0",
+  "description": "An example Multi-Page Application (MPA) with a great developer experience",
+  "scripts": {
+    "dev": "npm run start:dev --workspace=server",
+    "production": "npm run start:production --workspace=server",
+    "build": "npm run build --workspaces"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "vite": "^6.0.7"
+  },
+  "workspaces": [
+    "server",
+    "web/pages/page1",
+    "web/pages/page2",
+    "web/pages/page3",
+    "web/pages/page4",
+    "web/pages/page5"
+  ]
+}
