@@ -24,9 +24,17 @@ An example of a Multi-Page Application (MPA) where:
 
 - `npm run production`
 
-## adding a new page
+## adding a new page
 
-- in `/web/pages`, run `npm create vite@latest` to create a new vite project (e.g. `my-new-page`)
+### initial setup
+
+- decide on a name for the new page (e.g. `my-new-page`)
+- back in the root directory of this project, add the new page to the npm workspaces
+  - `"web/pages/my-new-page"`
+
+### create a new web application with vite
+
+- in `/web/pages`, run `npm create vite@latest` to create a new vite project with the name you chose
 - choose a template (e.g. React + JS)
 - `cd my-new-page`
 - `npm install`
@@ -35,11 +43,12 @@ An example of a Multi-Page Application (MPA) where:
 - set `server: { port: 4005 }` in `vite.config.js`
 - set `base: "/my-new-page"` in `vite.config.js`
 - set `build: { outDir: "../../../server/bundles/my-new-page", emptyOutDir: true }` in `vite.config.js`
+
+### setup proxying to and serving the new page
+
 - add a new entry to `pageInfo` in `proxy.ts`
   - `"my-new-page": { devServerPort: 4005 }`
 - add a new endpoint to serve the page in `pages.ts`
   - `pages.get("/my-new-page", render("my-new-page"));`
 - add a new endpoint to serve the page assets in `pages.ts`
   - `pages.get("/my-new-page/*", render("my-new-page"));`
-- back in the root directory of this project, add the new page to the npm workspaces
-  - `"web/pages/my-new-page"`
